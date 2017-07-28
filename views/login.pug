@@ -1,0 +1,14 @@
+extends layout
+
+block content
+ h1.title Register
+ form(method='POST', action='/users/login')
+  .control
+   label.label Username:
+   input.input(name='username', type='text')
+  .control
+   label.label Password:
+   input.input(name='password', type='password')
+   br
+   br
+  input.button.is-primary(value="Log In", type='submit', style='width: 100%;')

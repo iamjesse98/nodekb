@@ -1,0 +1,27 @@
+doctype html
+html
+ head
+  link(rel='stylesheet', href='/bulma.css')
+  meta(name='viewport', content="width=device-width, initial-scale=1.0, user-scalable=no")
+  title knowledgebase
+ body
+  nav.level(style='background: #00d1b2; padding: 3px;')
+   div.level-left
+    h1.level-item.title.is-3(style='color: #fff;')
+     a(href='/', style='color:#fff') KnowledgeBase
+   div.level-right
+    a.level-item(style='color: #fff;', href='/') Home
+    a.level-item(style='color: #fff;', href='/articles/add') Add an article
+    a.level-item(style='color: #fff;', href='/users/register') Register
+    a.level-item(style='color: #fff;', href='/users/login') Login
+  div(style='padding: 5px')
+   != messages('message', locals)
+   if errors
+    each error, i in errors
+     div(class='alert alert-danger') #{error.msg}
+   block content
+   br
+   hr
+   footer
+    p Copyright &copy; 2017
+  script(src='/js/main.js')
